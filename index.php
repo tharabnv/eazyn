@@ -18,7 +18,7 @@ $run_sql = mysqli_query($is_connect, $query);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>-- EAZYN --</title>
+  <title>^ EAZYN ^</title>
   <link rel="shortcut icon" type="image/png" href="assets//images/logos/pintu.png" />
   <link rel="stylesheet" href="assets//css/styles.min.css" />
 </head>
