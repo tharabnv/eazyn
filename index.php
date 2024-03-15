@@ -1,4 +1,12 @@
 <?php
+session_start(); // ketika mulai session harus ada sintak ini dulu
+if (!isset($_SESSION['login'])) {
+header('location: login.php');
+exit;
+}
+?>
+
+<?php
 //1. koneksi ke mysql
 require_once("config/connect.php");
 //2. Membuat query sesuai kebutuhan
@@ -121,7 +129,7 @@ $run_sql = mysqli_query($is_connect, $query);
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Eazyn</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="logout.php" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>

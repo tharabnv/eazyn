@@ -1,4 +1,9 @@
 <?php
+session_start(); // ketika mulai session harus ada sintak ini dulu
+if (!isset($_SESSION['login'])) {
+header('location: index.php');
+exit;
+}
 
 include 'config/connect.php'; // menghubungkan file koneksi.php
 
@@ -10,6 +15,8 @@ $result = mysqli_query($conn, $query); //menjalankan query pd database
 
 if (mysqli_num_rows($result) > 0) {
     session_start(); //memulai sesi
+    $_SESSION['login'] = true;
+    $_SESSION['username'] = $username;
     header('Location: index.php'); //mengalihkan ke halaman
 } else {
     echo 'Login Gagal!! Username atau password salah';
