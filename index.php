@@ -1,12 +1,4 @@
 <?php
-session_start(); // ketika mulai session harus ada sintak ini dulu
-if (!isset($_SESSION['login'])) {
-header('location: login.php');
-exit;
-}
-?>
-
-<?php
 //1. koneksi ke mysql
 require_once("config/connect.php");
 //2. Membuat query sesuai kebutuhan
