@@ -1,6 +1,6 @@
 <?php
 session_start(); // ketika mulai session harus ada sintak ini dulu
-if (!isset($_SESSION['login'])) {
+if (isset($_SESSION['login'])) {
 header('location: index.php');
 exit;
 }
