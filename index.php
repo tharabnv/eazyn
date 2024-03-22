@@ -1,11 +1,15 @@
 <?php
+session_start();
+if(!isset($_SESSION['id'])){
+          header('Location: login.php');
+}
 //1. koneksi ke mysql
 require_once("config/connect.php");
 //2. Membuat query sesuai kebutuhan
 $query = "select izin.*, guru.nama as nama_guru, bk.nama as nama_bk from izin
           inner join guru on guru.id=izin.guru_id
           inner join bk on bk.id = izin.bk_id
-          where siswa_id = 2";
+          where siswa_id = " . $_SESSION['id'];
           //tips: jalankan query di phpmyadmin utk ujicoba sql
 //3. Menjalankan query
 $run_sql = mysqli_query($is_connect, $query);
