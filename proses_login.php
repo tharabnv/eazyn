@@ -11,13 +11,14 @@ $username = $_POST['username']; //mengambil nilai username dr form
 $password = $_POST['password']; //mengambil nilai pswd dr form
 
 $query = "SELECT * FROM siswa WHERE username='$username' AND password='$password'";
-$result = mysqli_query($conn, $query); //menjalankan query pd database
+//$result = mysqli_query($conn, $query); //menjalankan query pd database
+$data = mysqli_fetch_assoc($query);
+if(NULL != $data)
+    $_SESSION['id] = $data['id']; 
 
-if (mysqli_num_rows($result) > 0) {
-    session_start(); //memulai sesi
-    $_SESSION['login'] = true;
-    $_SESSION['username'] = $username;
-    header('Location: index.php'); //mengalihkan ke halaman
+    header('Location: index.php');
+
 } else {
     echo 'Login Gagal!! Username atau password salah';
+    echo '<a href = 'login.php'>Kembali</a>;
 }
