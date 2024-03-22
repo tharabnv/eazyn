@@ -32,7 +32,7 @@ exit;
                   <img src="assets/images/logos/dark-logo.svg" width="180" alt="">
                 </a>
                 <p class="text-center">Perizinan Jadi Lebih Mudah</p>
-                <form>
+                <form action="proses_login.php" method="post">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Username</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
